@@ -114,54 +114,20 @@
 
 <!-- JS Logic -->
 <script>
-    document.getElementById('studentForm').addEventListener('submit', function () {
-      alert("Student data submitted successfully!");
-  });
+    document.getElementById("cancelBtn").addEventListener("click", function () {
+     document.getElementById("studentForm").reset();
+   });
 
+         alert("Student data submitted successfully!");
+         document.getElementById("studentForm").reset();
 
-        console.log("Form Submitted:", data);
-        alert("Student data submitted successfully!");
-        document.getElementById("studentForm").reset();
-
-        // Send data to Spring Boot backend without date/time (handled automatically in DB)
-        /*
-        fetch("http://localhost:8080/api/students", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data)
-        }).then(res => res.json())
-          .then(response => console.log("Success:", response))
-          .catch(error => console.error("Error:", error));
-        */
-    });
+     });
 
 </script>
 <script>
     document.getElementById("cancelBtn").reset();
 </script>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const form = document.getElementById("studentForm");
-        const messageBox = document.getElementById("messageBox");
-        const cancelBtn = document.getElementById("cancelBtn");
-
-        form.addEventListener("submit", function (e) {
-            e.preventDefault(); // Stop actual form submission
-
-            // Show success message
-            messageBox.style.display = "block";
-        });
-
-        cancelBtn.addEventListener("click", function () {
-            // Clear the form
-            form.reset();
-
-            // Hide the message
-            messageBox.style.display = "none";
-        });
-    });
-</script>
 
 </body>
 
